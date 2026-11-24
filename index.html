@@ -235,11 +235,13 @@
       .contexte-grid, .cours-grid { grid-template-columns: 1fr; }
       .quote-block { order: -1; }
       .nav-links {
-        position: fixed; top: -100%; left: 0; right: 0; bottom: auto; width: 100%; height: 100vh; flex-direction: column;
+        position: fixed; top: 0; left: 0; right: 0; bottom: auto; width: 100%; height: 100vh; height: 100dvh; flex-direction: column;
         background: rgba(109,0,71,0.98); padding: 5rem 2rem 2rem; gap: 1rem; align-items: center;
-        justify-content: center; transition: top .35s ease; z-index: 101;
+        justify-content: center; z-index: 101;
+        transform: translateY(-110%); visibility: hidden;
+        transition: transform .35s ease, visibility 0s linear .35s;
       }
-      .nav-links.open { top: 0; }
+      .nav-links.open { transform: translateY(0); visibility: visible; transition: transform .35s ease; }
       .nav-links.open + .nav-toggle { display: none; }
       .nav-links.open ~ .nav-backdrop { opacity: 1; visibility: visible; }
       .nav-links a { display: block; padding: 0.9rem 1.2rem; text-align: center; font-size: 1.15rem; }
