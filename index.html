@@ -218,8 +218,8 @@
       content: "~";
       position: absolute; top: 0; opacity: 0; animation: wavyTilde 1.4s ease-in-out infinite;
     }
-    .wavy::before { left: -0.2em; }
-    .wavy::after { right: -0.2em; }
+    .wavy::before { right: 100%; margin-right: 0.35em; }
+    .wavy::after { left: 100%; margin-left: 0.35em; }
     .wavy.visible::before, .wavy.visible::after { opacity: 1; }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
@@ -276,7 +276,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-tag">Biodanza · Mouvement libre · Tai-chi · Développement personnel</div>
-    <h1>ENSEMBLE<br><span class="wavy">enmouvement</span><br>le bien-être pour tou-te-s&nbsp;!</h1>
+    <h1>ENSEMBLE<br><span class="wavy">en&nbsp;mouvement</span><br>le bien-être pour tou-te-s&nbsp;!</h1>
     <p class="hero-sub">Un espace bienveillant et sécurisé pour étudiants et étudiantes de l'Université de Haute-Alsace : lâchez les tensions accumulées dans la journée, re-centrez-vous et grandissez, ensemble et individuellement.</p>
     <div class="hero-cta">
       <a href="#contexte" class="btn btn-yellow">Découvrir le projet ↓</a>
