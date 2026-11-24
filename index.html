@@ -209,6 +209,20 @@
     footer .heart { color: var(--coral); }
 
     /* ANIMATIONS */
+    @keyframes wavyTilde {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-3px) rotate(-6deg); }
+      50% { transform: translateY(0) rotate(0deg); }
+      75% { transform: translateY(3px) rotate(6deg); }
+    }
+    .wavy { position: relative; display: inline-block; }
+    .wavy::before, .wavy::after {
+      content: "~";
+      position: absolute; top: 0; opacity: 0; animation: wavyTilde 1.4s ease-in-out infinite;
+    }
+    .wavy::before { left: -0.2em; }
+    .wavy::after { right: -0.2em; }
+    .wavy.visible::before, .wavy.visible::after { opacity: 1; }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -243,7 +257,7 @@
     <a href="#hero" class="nav-brand">ENSEMBLE en mouvement</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#contexte" onclick="closeMenu()">Contexte</a></li>
-      <li><a href="#cours" onclick="closeMenu()">Le cours</a></li>
+      <li><a href="#cours" onclick="closeMenu()">Le projet</a></li>
       <li><a href="#objectifs" onclick="closeMenu()">Objectifs</a></li>
       <li><a href="#impact" onclick="closeMenu()">Impact</a></li>
       <li><a href="#cours" class="btn-nav" onclick="closeMenu()">Nous rejoindre</a></li>
@@ -256,7 +270,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-tag">Biodanza · Mouvement libre · Tai-chi · Développement personnel</div>
-    <h1>ENSEMBLE<br><span>e~n~ m~ou~ve~ment</span><br>le bien-être pour tou-te-s&nbsp;!</h1>
+    <h1>ENSEMBLE<br><span class="wavy">~ en~ m~ou~ve~ment~</span><br>le bien-être pour tou-te-s&nbsp;!</h1>
     <p class="hero-sub">Un espace bienveillant et sécurisé pour étudiants et étudiantes de l'Université de Haute-Alsace : lâchez les tensions accumulées dans la journée, re-centrez-vous et grandissez, ensemble et individuellement.</p>
     <div class="hero-cta">
       <a href="#contexte" class="btn btn-yellow">Découvrir le projet ↓</a>
@@ -297,7 +311,7 @@
   <section id="cours">
     <div class="container">
       <div class="center section-head reveal">
-        <span class="label wine">Le cours</span>
+        <span class="label warm">Le cours</span>
         <h2 class="title title-lg">Un projet pour tou-te-s, à l'Université de Haute-Alsace</h2>
         <p class="subtitle centered">Un projet encadré par Angela Fauvel, au cœur de la FST de Mulhouse, pour le bien-être de tous les étudiants.</p>
       </div>
@@ -308,8 +322,8 @@
             <p>Un espace bienveillant et sécurisé pour <span class="highlight">tous les étudiants de l'UHA</span> qui souhaitent partager des moments de légèreté, de bien-être et de connexion avec soi-même et les autres.</p>
           </div>
           <div class="info-card reveal">
-            <h3>Encadré par Angela Fauvel</h3>
-            <p>Cours animé par <span class="highlight">Angela Fauvel</span>, facilitatrice de Biodanza : danse, mouvement libre et tai-chi pour lâcher les tensions, se re-centrer et développer ses potentiels, sans jugement, sans prérequis.</p>
+            <h3>Projet encadré par Angela Fauvel</h3>
+            <p>Projet encadré par <span class="highlight">Angela Fauvel</span>, facilitatrice de Biodanza : danse, mouvement libre et tai-chi pour lâcher les tensions, se re-centrer et développer ses potentiels, sans jugement, sans prérequis.</p>
           </div>
           <div class="info-card reveal">
             <h3>À la FST de Mulhouse</h3>
@@ -424,16 +438,17 @@
     function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
 
     const reveals = document.querySelectorAll('.reveal');
+    const wavies = document.querySelectorAll('.wavy');
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
+      entries.forEach((e) => {
         if (e.isIntersecting) {
-          e.target.style.transitionDelay = (i % 3) * 0.08 + 's';
           e.target.classList.add('visible');
           io.unobserve(e.target);
         }
       });
     }, { threshold: 0.15 });
-    reveals.forEach(el => io.observe(el));
+    reveals.forEach(el => { el.style.transitionDelay = (Array.from(reveals).indexOf(el) % 3) * 0.08 + 's'; io.observe(el); });
+    wavies.forEach(el => io.observe(el));
   </script>
 </body>
 </html>
