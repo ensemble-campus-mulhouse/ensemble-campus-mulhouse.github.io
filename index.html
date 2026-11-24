@@ -242,6 +242,7 @@
       }
       .nav-links.open { transform: translateX(0); }
       .nav-links.open + .nav-toggle { display: none; }
+      .nav-links.open ~ .nav-backdrop { opacity: 1; visibility: visible; z-index: 101; }
       .nav-links a { display: block; padding: 0.8rem 1rem; text-align: center; }
       .nav-toggle { display: block; }
       .nav-backdrop {
@@ -249,7 +250,6 @@
         background: rgba(0,0,0,0.45); z-index: 99;
         opacity: 0; visibility: hidden; transition: opacity .35s ease;
       }
-      .nav-links.open ~ .nav-backdrop { opacity: 1; visibility: visible; }
     }
     @media (max-width: 520px) {
       .hero-cta { flex-direction: column; width: 100%; }
