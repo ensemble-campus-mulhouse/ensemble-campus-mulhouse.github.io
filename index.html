@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENSEMBLE en mouvement – le bien-être pour tou-te-s !</title>
-  <meta name="description" content="ENSEMBLE en mouvement, un projet de Biodanza pour les étudiants de l'Université de Haute-Alsace (FST de Mulhouse), encadré par Angela Fauvel. Danse, mouvement libre, tai-chi et développement personnel.">
+  <meta name="description" content="ENSEMBLE en mouvement, un projet de Biodanza pour les étudiants de l'Université de Haute-Alsace (FST de Mulhouse), encadré par Angela Fauvel, enseignante et facilitatrice. Danse, mouvement libre, tai-chi et développement personnel.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -149,10 +149,15 @@
     .info-card a { color: var(--wine); }
     .info-card .highlight { font-weight: 700; color: var(--ink); }
     .cours-visual {
-      border-radius: 50%; aspect-ratio: 1/1; overflow: hidden; box-shadow: var(--shadow); max-width: 300px; margin: 0 auto; width: clamp(220px, 28vw, 300px); align-self: center;
+      max-width: 300px; margin: 0 auto; width: clamp(220px, 28vw, 300px); align-self: center; text-align: center;
     }
 
-    .cours-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cours-figure { margin: 0; }
+
+    .cours-figure img { width: 100%; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover; display: block; box-shadow: var(--shadow); }
+
+    .cours-figure figcaption { margin-top: 0.75rem; font-size: 0.78rem; color: var(--text-light); line-height: 1.4; }
+    .cours-figure figcaption a { color: var(--wine); }
 
     /* OBJECTIFS */
     #objectifs { background: var(--white); }
@@ -306,7 +311,6 @@
         </div>
         <div class="quote-block reveal">
           <div class="big">Le mouvement libère ce qui est coincé dans le corps</div>
-          <div class="quote">— Biodanza</div>
         </div>
       </div>
     </div>
@@ -322,7 +326,7 @@
       <div class="center section-head reveal">
         <span class="label warm">Le projet</span>
         <h2 class="title title-lg">Un projet pour tou-te-s, à l'Université de Haute-Alsace</h2>
-        <p class="subtitle centered">Un projet encadré par Angela Fauvel, au cœur de la FST de Mulhouse, pour le bien-être de tous les étudiants.</p>
+        <p class="subtitle centered">Un projet encadré par Angela Fauvel, enseignante et facilitatrice, au cœur de la FST de Mulhouse, pour le bien-être de tous les étudiants.</p>
       </div>
       <div class="cours-grid">
         <div class="cours-info">
@@ -331,8 +335,8 @@
             <p>Un espace bienveillant et sécurisé pour <span class="highlight">tous les étudiants de l'UHA</span> qui souhaitent partager des moments de légèreté, de bien-être et de connexion avec soi-même et les autres.</p>
           </div>
           <div class="info-card reveal">
-            <h3>Projet encadré par Angela Fauvel</h3>
-            <p>Projet encadré par <span class="highlight">Angela Fauvel</span>, facilitatrice de Biodanza : danse, mouvement libre et tai-chi pour lâcher les tensions, se re-centrer et développer ses potentiels, sans jugement, sans prérequis.</p>
+            <h3>Projet encadré par Angela Fauvel, enseignante et facilitatrice</h3>
+            <p>Projet encadré par <span class="highlight">Angela Fauvel</span>, enseignante et facilitatrice : danse, mouvement libre et tai-chi pour lâcher les tensions, se re-centrer et développer ses potentiels, sans jugement, sans prérequis.</p>
           </div>
           <div class="info-card reveal">
             <h3>À la FST de Mulhouse</h3>
@@ -340,7 +344,7 @@
           </div>
         </div>
         <div class="cours-visual">
-          <img src="images/danse-temp.jpg" alt="Illustration colorée de danseurs en ronde autour d'un soleil" loading="lazy">
+          <figure class="cours-figure"><img src="images/biodanza-festival.jpg" alt="Ronde de Biodanza dans une salle de gym, près de cinq cents personnes tenant la main" loading="lazy"><figcaption>Photo : WikiEspejo — <a href="https://commons.wikimedia.org/wiki/File:Ronda_del_primer_festival_Biodanza_Valencia.JPG">Wikimedia Commons</a> (CC BY-SA 3.0)</figcaption></figure>
         </div>
       </div>
     </div>
@@ -396,7 +400,7 @@
   <section id="impact">
     <div class="container impact-content">
       <div class="center section-head reveal">
-        <span class="label">Adéquation aux thématiques</span>
+        <span class="label">Des résultats positifs et durables</span>
         <h2 class="title title-lg">Un impact concret pour les étudiants</h2>
       </div>
       <div class="reveal">
@@ -413,7 +417,7 @@
   <footer>
     <div class="brand">ENSEMBLE en mouvement</div>
     <div class="tagline">le bien-être pour tou-te-s !</div>
-    <p>Projet encadré par Angela Fauvel · Université de Haute-Alsace (FST de Mulhouse)</p>
+    <p>Projet encadré par Angela Fauvel, enseignante et facilitatrice · Université de Haute-Alsace (FST de Mulhouse)</p>
     <p style="margin-top:1rem;">Fait avec <span class="heart">♡</span> pour une vie étudiante plus vivante</p>
   </footer>
 
